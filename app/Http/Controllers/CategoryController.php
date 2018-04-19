@@ -19,11 +19,7 @@ class CategoryController extends Controller
     {
         $cat_list = \DB::table('categories')->select('id','category','parent')->get();
         $tree = $this->buildTree($cat_list);
-
-        var_dump($tree);
-        die;
-
-
+        
         $categories = Category::all();
         $categoriesf = $this->buildArray($categories->toArray());
 
